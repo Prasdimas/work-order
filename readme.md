@@ -80,3 +80,14 @@ Sebelum memulai, pastikan Anda telah menginstal:
 - **Frontend**: vue, Vuetify
 - **Database**: MYSQL
 
+## Login 
+. **Manager**
+```bash
+username : Manager
+Password : 123456
+```
+. **Operator**
+```bash
+username : Operator 1
+Password : 123456
+```
