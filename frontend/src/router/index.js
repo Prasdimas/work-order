@@ -16,7 +16,6 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'Dashboard',
     component: Dashboard,
     beforeEnter: (to, from, next) => {
       if (!localStorage.getItem('token')) {

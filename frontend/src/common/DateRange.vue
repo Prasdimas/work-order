@@ -98,9 +98,6 @@ this.ViewDialog = false
     },
 
     },
-    mounted() {
-        console.log(this.$store.state);
-        
-    },
+
   };
 </script>
