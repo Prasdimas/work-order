@@ -28,7 +28,7 @@ export default new Vuex.Store({
 
     // message
     message:"",
-
+    
     //  Work Orders
     WorkOrders: [],
 
@@ -137,6 +137,8 @@ export default new Vuex.Store({
       } catch (error) {
         if (error.response) {
           console.error('Registration failed:', error.response.data);
+          context.commit("SET_OBJECT", ["message", error.response.data.message]);
+          context.commit("SET_OBJECT", ["dialog", true]);
         } else {
           console.error('Registration failed:', error.message);
         }

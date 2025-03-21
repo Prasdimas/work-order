@@ -1,5 +1,13 @@
 <template>
   <v-row justify="center">
+    <v-snackbar v-model="dialog" :timeout="4000" top color="pink">
+			<h4>{{ message }}</h4>
+			<template v-slot:action="{ attrs }">
+				<v-btn text dark v-bind="attrs" @click="dialog = false">
+					Close
+				</v-btn>
+			</template>
+		</v-snackbar>
     <v-col cols="12" sm="10" class="pt-0">
       <v-card class="elevation-6 mt-15" >
         <v-window v-model="step">
@@ -87,9 +95,6 @@
               <v-col cols="12" md="6">
                 <v-card-text class="mt-10 mb-2">
                   <h2 class="text-center">Sign Up for an Account</h2>
-                  <p class="text-center">
-                    {{ message }}
-                  </p>
                   <h5 class="text-center grey--text mb-2 mt-n2">
                     Let's get you all set up so you can start creating your first onboarding experience
                   </h5>
@@ -172,6 +177,14 @@ export default {
         this.__c("firstName", v);
       },
     },
+    dialog: {
+      get() {
+        return this.__s.dialog;
+      },
+      set(v) {
+        this.__c("dialog", v);
+      },
+    },
     lastName: {
       get() {
         return this.__s.lastName;
@@ -211,6 +224,8 @@ export default {
       return this.$store.commit("SET_OBJECT", [a, b]);
     },
     async login() {
+      console.log(this.$store.state);
+      
   try {
     await this.$store.dispatch('login');
     this.$nextTick(() => {

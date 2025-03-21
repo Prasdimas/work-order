@@ -53,7 +53,6 @@ class WorkOrderController extends Controller
             'due_date' => 'required|date',
             'status' => 'required|max:50',
             'assigned_operator_id' => 'required|integer',
-            'id' => 'nullable|exists:work_orders,id',
         ]);
         $id = $request->id;
 
@@ -61,6 +60,7 @@ class WorkOrderController extends Controller
             // Update existing work order
             $workOrder = WorkOrder::findOrFail($id);
             $workOrder->status = $request->status;
+            $workOrder->quantity = $request->quantity;
             $workOrder->assigned_operator_id = $request->assigned_operator_id ?? $workOrder->assigned_operator_id;
             $workOrder->save();
 
@@ -74,6 +74,12 @@ class WorkOrderController extends Controller
                 'status' => $request->status,
                 'assigned_operator_id' => $request->assigned_operator_id,
                 'work_order_number' => $workOrderNumber,
+            ]);
+            WorkOrderProgress::create([
+                'work_order_id' => $workOrder->id,
+                'status' => 'pending',
+                'quantity' =>  $request->quantity,
+                'notes' => '',
             ]);
 
             return response()->json(['message' => 'Work order created successfully.'], 201);

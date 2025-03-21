@@ -68,6 +68,7 @@ export default {
       },
         add() {
             this.__c("dialog", true);
+            this.__c("edit", false);
             this.__c("NumberWO", "");
             this.__c("NameProduct", "");
             this.__c("qty", "");

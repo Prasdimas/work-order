@@ -168,7 +168,7 @@
       },
       cancel() {
         this.dialog = false;
-
+        this.__c("edit",false);
       },
       saveWorkOrder() {
           this.$store.dispatch('addWorkOrder').then(()=>{

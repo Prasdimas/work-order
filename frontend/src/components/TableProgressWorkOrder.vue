@@ -37,8 +37,8 @@ export default {
          sortable: false,
        
        },
-       { text: 'Progress', sortable: false },
        { text: 'Pending',sortable: false },
+       { text: 'Progress', sortable: false },
        { text: 'Complete',  sortable: false },
        { text: 'Cancelled', sortable: false },
      ],
