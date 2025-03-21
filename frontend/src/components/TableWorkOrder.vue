@@ -98,7 +98,7 @@ import SearchBar from '../common/SearchBar.vue'
           },
           { text: 'Operator', value: 'assigned_to_name',sortable: false },
           { text: 'Nama', value: 'product_name',sortable: false },
-          { text: 'Quantity', value: 'quantity',sortable: false },
+          // { text: 'Quantity', value: 'quantity',sortable: false },
           { text: 'Tanggal', value: 'due_date',sortable: false },
           { text: 'Status', value: 'status',sortable: false },
           { text: 'Action', value: 'actions' },

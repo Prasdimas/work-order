@@ -95,7 +95,7 @@
               <v-col cols="12" md="6">
                 <v-card-text class="mt-10 mb-2">
                   <h2 class="text-center">Sign Up for an Account</h2>
-                  <h5 class="text-center grey--text mb-2 mt-n2">
+                  <h5 class="text-center grey--text mb-2 mt-2">
                     Let's get you all set up so you can start creating your first onboarding experience
                   </h5>
                   <v-row align="center" justify="center">
@@ -123,6 +123,8 @@
                         color="blue"
                         autocomplete="false"
                         type="password"
+                        hint="Password minimal 6 karakter"
+                        persistent-hint
                       />
                       <v-row>
                         <v-col cols="12" sm="7">

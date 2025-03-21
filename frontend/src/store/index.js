@@ -114,9 +114,13 @@ export default new Vuex.Store({
         });
         context.commit("SET_OBJECT", ["message",response.data.message]);
         localStorage.setItem('auth_token', response.data.token);  
+        // context.commit("SET_OBJECT", ["message", error.response.data.message]);
+        context.commit("SET_OBJECT", ["dialog", true]);
       } catch (error) {
         if (error.response) {
           console.error('Registration failed:', error.response.data);
+          context.commit("SET_OBJECT", ["message", "register failed !"]);
+          context.commit("SET_OBJECT", ["dialog", true]);
         } else {
           console.error('Registration failed:', error.message);
         }
